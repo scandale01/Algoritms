@@ -109,7 +109,7 @@ void yearTime() {
 		printf("Fault value was entered.\n");
 	}
 }
-
+/*
 int power(int x, int y) {
 	int num = y;
 	for (int i = 1; i < x; i++ )
@@ -117,17 +117,63 @@ int power(int x, int y) {
 		y *= num;
 	}
 	return y;
-}
+}*/
+int powerUpgrade(int num, int stepen) {
+	int n, s, k;
+	n = 1; 
+	s = num;
+	k = stepen;
+	while (k != 0)
+	{
+		if ((k % 2) == 0)
+		{
+			s *= s;
+			k = k / 2;
+		}
+		else
+		{
+			k--;
+			n *= s;
+		}
+	}
+	return n;
+	}
 void inPower() {
 	int a, b;
 	printf("Enter number A\n");
 	scanf("%d", &a);
 	printf("Enter number B\n");
 	scanf("%d", &b);
-	printf("Square A = %d, cube A = %d\n", power(2, a), power(3, a));
-	printf("Square B = %d, cube B = %d\n", power(2, b), power(3, b));
+	printf("Square A = %d, cube A = %d\n", powerUpgrade(a, 2), powerUpgrade(a, 3));
+	printf("Square B = %d, cube B = %d\n", powerUpgrade(b, 2), powerUpgrade(b, 3));
 }
-void 
+
+void chastnoeOtDelenija() {
+	int n, k, counter, x, y;
+	printf("Vvedite 4islo N\n");
+	scanf("%d", &n);
+	printf("Vvedite 4islo K\n");
+	scanf("%d", &k);
+	counter = 0;
+	while (n >= k)
+	{
+		counter++;
+		n -= k;
+	}
+	printf("4islo %d delitsja na %d rovno %d raz\n", n, k, counter);
+	printf("Ostatok ot delenija %d\n", n);
+}
+
+void nomerDesjat(){
+	int n;
+	printf("Vvedite N:");
+	scanf("%i", &n);
+	while ((n>0)&((n % 10) != 2)) {
+		n /= 10;
+	}
+	printf("%s\n", ((n>0)&((n % 10) == 2)) ? "True" : "False");
+	return 0;
+}
 
 int main(int argc, const char *argv[] ) {
 	//massIndex(96, 1.76);
@@ -136,5 +182,7 @@ int main(int argc, const char *argv[] ) {
 	//sqrtOfvalem();
 	//yearTime();
 	//inPower();
+	//chastnoeOtDelenija();
+	nomerDesjat();
 	return 0;
 }
