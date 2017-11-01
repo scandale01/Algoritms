@@ -1,3 +1,6 @@
+/*Domawnaja rabota po kursu algoritmq i strukturq dannqh
+U4enik: Serov Vyacheslav*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -79,19 +82,59 @@ void sqrtOfvalem()
 }
 void yearTime() {
 	int month;
-	printf("Enter month number\n");
+	printf("Enter month number(1-12)\n");
 	scanf("%d", &month);
-	if (true)
+	if (month == 12 || month ==1 || month == 2)
 	{
-
+		printf("Winter\n");
+		return 0;
+	} 
+	if (month == 3 || month == 4 || month == 5)
+	{
+		printf("Autumn\n");
+		return 0;
+	}
+	if (month == 6 || month == 7 || month == 8)
+	{
+		printf("Summer\n");
+		return 0;
+	}
+	if (month == 9 || month == 10 || month == 1)
+	{
+		printf("Winter\n");
+		return 0;
+	}
+	else
+	{
+		printf("Fault value was entered.\n");
 	}
 }
+
+int power(int x, int y) {
+	int num = y;
+	for (int i = 1; i < x; i++ )
+	{
+		y *= num;
+	}
+	return y;
+}
+void inPower() {
+	int a, b;
+	printf("Enter number A\n");
+	scanf("%d", &a);
+	printf("Enter number B\n");
+	scanf("%d", &b);
+	printf("Square A = %d, cube A = %d\n", power(2, a), power(3, a));
+	printf("Square B = %d, cube B = %d\n", power(2, b), power(3, b));
+}
+void 
 
 int main(int argc, const char *argv[] ) {
 	//massIndex(96, 1.76);
 	//maxOutOfFour(8, 2, 7, 1);
 	//valueExchange(4, 10);
 	//sqrtOfvalem();
-	yearTime();
+	//yearTime();
+	//inPower();
 	return 0;
 }
