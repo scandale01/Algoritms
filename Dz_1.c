@@ -3,7 +3,8 @@ U4enik: Serov Vyacheslav*/
 
 #include <stdio.h>
 #include <math.h>
-
+//Ввести вес и рост человека. Рассчитать и вывести индекс массы тела по формуле I=m/(h*h);
+//где m-масса тела в килограммах, h - рост в метрах.
 void massIndex(int mass, float h) {
 	if (mass == 0 || h == 0)
 	{
@@ -16,7 +17,7 @@ void massIndex(int mass, float h) {
 	}
 
 }
-
+//Найти максимальное из четырех чисел. Массивы не использовать.
 void maxOutOfFour(int one, int two, int three, int four) {
 	int result;
 	if (one > two)
@@ -37,7 +38,7 @@ void maxOutOfFour(int one, int two, int three, int four) {
 	}
 	printf("Max value is: %d\n", result);
 }
-
+//Написать программу обмена значениями двух целочисленных переменных:
 void valueExchange(int a, int b) {
 	printf("a = %d, b = %d\n", a, b);
 	a = a^b;
@@ -45,7 +46,7 @@ void valueExchange(int a, int b) {
 	a = a^b;
 	printf("a = %d, b = %d\n", a, b);
 }
-
+//Написать программу нахождения корней заданного квадратного уравнения.
 void sqrtOfvalem()
 {
 	int a, b, c, d;
@@ -80,6 +81,7 @@ void sqrtOfvalem()
 		printf("x = %.3f\n", t);
 	}
 }
+//С клавиатуры вводится номер месяца. Требуется определить, к какому времени года он относится.
 void yearTime() {
 	int month;
 	printf("Enter month number(1-12)\n");
@@ -110,6 +112,7 @@ void yearTime() {
 	}
 }
 /*
+//Ввести a и b и вывести квадраты и кубы чисел от a до b.
 int power(int x, int y) {
 	int num = y;
 	for (int i = 1; i < x; i++ )
@@ -118,6 +121,7 @@ int power(int x, int y) {
 	}
 	return y;
 }*/
+//16. Реализовать алгоритм ускоренного возведения в степень.
 int powerUpgrade(int num, int stepen) {
 	int n, s, k;
 	n = 1; 
@@ -147,7 +151,8 @@ void inPower() {
 	printf("Square A = %d, cube A = %d\n", powerUpgrade(a, 2), powerUpgrade(a, 3));
 	printf("Square B = %d, cube B = %d\n", powerUpgrade(b, 2), powerUpgrade(b, 3));
 }
-
+/*Даны целые положительные числа N и K. Используя только операции сложения
+и вычитания, найти частное от деления нацело N на K, а также остаток от этого деления.*/
 void chastnoeOtDelenija() {
 	int n, k, counter, x, y;
 	printf("Vvedite 4islo N\n");
@@ -163,7 +168,9 @@ void chastnoeOtDelenija() {
 	printf("4islo %d delitsja na %d rovno %d raz\n", n, k, counter);
 	printf("Ostatok ot delenija %d\n", n);
 }
-
+/*Дано целое число N (> 0). С помощью операций деления нацело и взятия остатка
+от деления определить, имеются ли в записи числа N нечетные цифры.
+Если имеются, то вывести True, если нет — вывести False.*/
 void nomerDesjat(){
 	int n;
 	printf("Vvedite N:");
@@ -174,6 +181,51 @@ void nomerDesjat(){
 	printf("%s\n", ((n>0)&((n % 10) == 2)) ? "True" : "False");
 	return 0;
 }
+/*С клавиатуры вводятся числа, пока не будет введен 0. Подсчитать среднее
+арифметическое всех положительных четных чисел, оканчивающихся на 8.
+*/
+/*
+void nomerOdinatcat() {
+	int n;
+	int s = 0, count = 0;
+	printf("Vvedite 4islo, dlja vqhoda vvedite 0\n");
+	scanf("%d", &n);
+	while (n != 0)
+	{
+		if ((n > 0) & ((n % 2) == 0))
+		{
+			while ((n / 10) < 10)
+			{	
+			n /= 10;
+			}
+			if ((n % 8) == 8)
+			{
+				s += n;
+				count++;
+			}
+		}
+		printf("Vvedite 4islo, dlja vqhoda vvedite 0\n");
+		scanf("%d", &n);
+	}
+	printf("Srednee arefmeti4esko ... ravno %d \n", s / count);
+}*/
+//Написать функцию нахождения максимального из трех чисел.
+void nomerDvenadcat() {
+	int m[3];
+	printf("Vvedite tri 4isla\n");
+	for (int i = 0; i < 3; i++) {
+		scanf("%d", &m[i]);
+	}
+	int max = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		if (m[i] > max)
+		{
+			max = m[i];
+		}
+	}
+	printf("Maximum: %d \n", max);
+}
 
 int main(int argc, const char *argv[] ) {
 	//massIndex(96, 1.76);
@@ -183,6 +235,8 @@ int main(int argc, const char *argv[] ) {
 	//yearTime();
 	//inPower();
 	//chastnoeOtDelenija();
-	nomerDesjat();
+	//nomerDesjat();
+	nomerOdinatcat();
+	//nomerDvenadcat();
 	return 0;
 }
