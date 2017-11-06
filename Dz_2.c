@@ -93,10 +93,34 @@ void inPower() {
 	scanf("%d", &b);
 	printf("Number: %d\n", inPowerB(a, b));
 }
+
+/* Исполнитель Калькулятор преобразует целое число, записанное на экране. У исполнителя                    
+две​ ​команды,​ ​каждой​ ​команде​ ​присвоен​ ​номер:  
+1.​ ​Прибавь​ ​1 
+2.Умножь​ ​на​ ​2 
+Первая команда увеличивает число на экране на 1, вторая увеличивает это число в 2 раза.                              
+Сколько​ ​существует​ ​программ,​ ​которые​ ​число​ ​3​ ​преобразуют​ ​в​ ​число​ ​20? 
+а)​ ​с​ ​использованием​ ​массива; 
+б)​ ​с​ ​использованием​ ​рекурсии. */
+int plusOne(int a) {
+	return a += 1;
+}
+int multiplyTwo(int b) {
+	return b *= 2;
+}
+void calc() {
+	int n;
+	printf("Vvedite 4islo dlja calc: \n");
+	scanf("%d", &n);
+	printf("Plus 1 : %d", plusOne(n));
+	printf("Umnizit na dva : %d", multiplyTwo(n));
+
+}
+
 int main(int argc, const char *argv[]) {
 	//F(6);
 	//sumDigit(23);
 	//fromTentoDoubleSystem();
-	inPower();
+	//inPower();
 	return 0;
 }
